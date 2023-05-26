@@ -1,0 +1,126 @@
+a=3
+b='6'
+c='t'
+   str(a)+b
+   print(str(a)+b)
+   int(str(a)+b)+9-8  %int 字符串（不能小数点）变整数
+
+
+*复制
+'a'*3   %'aaa'
+
+a='fhdjfh'
+a.replace('d','u')
+
+
+
+
+
+
+a='你今天出门吗，我想和你一起玩'
+b='不出门了今天，天气不适合一起玩'
+for k in range(2,8):
+  for i in range(0,len(a)):
+     for j in range(0,len(b)):
+          if a[i:i+k]==b[j:j+k]:
+              print(a[i:i+k])
+          else:
+              print(0)
+
+
+a='你今天出门吗，我想和你一起玩'
+b='不出门了今天，天气不适合一起玩'
+for k in range(2,8):
+  for i in range(0,len(a)):
+         for j in range(0,len(b)):
+                 if  a[i:i+k]==b[j:j+k] and len(a[i:i+k])>2:
+                               print(a[i:i+k],k)
+         print(a[i:i+k])
+       
+
+import console
+a='你今天出门吗，我想和你一起玩'
+b='不出门了今天，天气不适合一起玩'
+for k in range(2,8):
+  for i in range(0,14):
+     for j in range(0,15):
+          if a[i:i+k]==b[j:j+k]:
+                chong='\033[1;31;40m%s\033[0m' % a[i:i+k]
+                print(a.replace(a[i:i+k],chong))
+                print(a[i:i+k])   
+
+
+print("\033[0;31m%s\033[0m" % "输出红色字符")
+print("\033[0;31m%s\033[0m" % a[1])
+
+
+ t='\033[1;31;40m%s\033[0m' % a[1]
+t='\033[1;31;40myu\033[0m' % t
+
+
+import console
+a='你今天出门吗，我想疯狂拉哈佛和你一哈哈哈起玩我不要吃饭了'
+b='不出门了今天，天打卡维护哈哈法律和气不阿瓦都唔UFO皮肤适有本事及不吃饿死合一起玩'
+for k in range(2,8):
+  for i in range(0,len(a)):
+     for j in range(0,len(b)):
+          if a[i:i+k]==b[j:j+k] and i+k<len(a):
+                t=str(i)
+                s=str(i+k)
+                jg=open(r'E:\sj.txt','a+')
+                jg.write(t+' '+ s+'\n')
+                jg.close()
+def loadData(file):
+  inFile = open(file, 'r')#以只读方式打开某fileName文件
+  #定义两个空list，用来存放文件中的数据
+  X = [ ]
+  y = [ ]
+  for line in inFile:
+    trainingSet = line.split(' ') #对于每一行，按','把数据分开，这里是分成两部分
+    X.append(trainingSet[0]) #第一部分，即文件中的第一列数据逐一添加到list X 中
+    y.append(trainingSet[1]) #第二部分，即文件中的第二列数据逐一添加到list y 中
+  return(X,y)
+
+
+(X,y)=loadData('E:\sj.txt')
+for u in range(0,len(X)):
+             a=a.replace(a[14*u+int(X[u]):14*u+int(y[u])],'\033[1;31;40m%s\033[0m' % a[14*u+int(X[u]):14*u+int(y[u])])
+             print(a)
+
+
+
+
+                #for m in range(0,5)
+                #chong='\033[1;31;40m%s\033[0m' % a[X[m]:y[m]
+t0=int(X[0])
+s0=int(y[0])
+c=a.replace(a[int(X[0]):int(y[0])],'\033[1;31;40m%s\033[0m' % a[int(X[0]):int(y[0])]).replace(a[int(X[1]):int(y[1])],'\033[1;31;40m%s\033[0m' % a[int(X[1]):int(y[1])]).replace(a[int(X[2]):int(y[2])],'\033[1;31;40m%s\033[0m' % a[int(X[2]):int(y[2])]).replace(a[int(X[3]):int(y[3])],'\033[1;31;40m%s\033[0m' % a[int(X[3]):int(y[3])])
+print(c)
+  
+
+以下用逗号隔开文件中数据，一样
+a='你今天出门吗，我想和你一起玩'
+b='不出门了今天，天气不适合一起玩'
+for k in range(2,8):
+  for i in range(0,12):
+     for j in range(0,13):
+          if a[i:i+k]==b[j:j+k] and i+k<15:
+                t=str(i)
+                s=str(i+k)
+                jg=open(r'E:\sj.txt','a+')
+                jg.write(t+','+ s+'\n')
+                jg.close()
+def loadData(file):
+  inFile = open(file, 'r')#以只读方式打开某fileName文件
+  #定义两个空list，用来存放文件中的数据
+  X = [ ]
+  y = [ ]
+  for line in inFile:
+    trainingSet = line.split(',') #对于每一行，按','把数据分开，这里是分成两部分
+    X.append(trainingSet[0]) #第一部分，即文件中的第一列数据逐一添加到list X 中
+    y.append(trainingSet[1]) #第二部分，即文件中的第二列数据逐一添加到list y 中
+  return(X,y)
+
+
+(X,y)=loadData('E:\sj.txt')     
+
